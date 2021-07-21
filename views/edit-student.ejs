@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 mx-auto mt-4">
+            <div class="card">
+                <div class="card-header bg-danger">
+                    <h3 class="text-center text-white">Update ( <%=
+                            user.username
+                            %> )</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="/update/<%= user._id %> " method="POST"
+                            enctype="multipart/form-data">
+                            <div class="form-group mt-3">
+                                <label for=""><b>Enter username</b></label>
+                                <input type="text" value="<%=user.username%>"
+                                name="username"
+                                id="username"
+                                class="form-control mt-1 form-control-lg"
+                                placeholder="Username">
+                            </div>
+                            <div class="form-group mt-3">
+                                <label for=""><b>Enter age</b></label>
+                                <input type="text" value="<%= user.age %>"
+                                name="age"
+                                id="age"
+                                class="form-control mt-1 form-control-lg"
+                                placeholder="Age">
+                            </div>
+                            <div class="form-group mt-3">
+                                <label for=""><b>Enter Phone</b></label>
+                                <input type="text" value="<%= user.phone %>"
+                                name="phone"
+                                id="phone"
+                                class="form-control mt-1 form-control-lg"
+                                placeholder="Phone">
+                            </div>
+                            <div class="form-group mt-3">
+                                <label for=""><b>Enter File</b></label>
+                                <input type="file" name="image"
+                                    id="image"
+                                    class="form-control mt-1 form-control-lg"
+                                    placeholder="File">
+                                <img src="/<%= user.image %>" width="50"
+                                alt="">
+                                <input type="hidden" value="<%= user.image %>"
+                                name="old_image" class="form-control
+                                form-control-lg">
+                            </div>
+                            <div class="form-group mt-3">
+                                <button class="btn btn-primary">Save</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

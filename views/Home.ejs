@@ -1,0 +1,60 @@
+<div class="container">
+    <% if (message) { %>
+        <div class="alert alert-<%= message.type %> alert-dismissible fade
+            show"
+            role="alert">
+            <button type="button" class="close btn" data-dismiss="alert"
+                aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                <span class="sr-only">Close</span>
+            </button>
+            <strong><%= message.message %>
+                </div>
+                <% } %>
+                    <% if (user !="" ) { %>
+                        <div class="table-responsive mt-5">
+                            <table class="table table-border">
+                                <thead>
+                                    <tr class="bg-dark text-white">
+                                        <td>Id</td>
+                                        <td>Username</td>
+                                        <td>Age</td>
+                                        <td>Phone</td>
+                                        <td>Image</td>
+                                        <td>Edit</td>
+                                        <td>Delete</td>
+                                    </tr>
+                                </thead>
+                                <% user.forEach((user,index)=> { %>
+                                    <tr>
+                                        <td><%= index+1 %> </td>
+                                            <td><%= user.username %> </td>
+                                                <td><%= user.age %> </td>
+                                                    <td><%= user.phone %> </td>
+                                                        <td><img src="<%=
+                                                                user.image %>"
+                                                            alt="" width="50">
+                                                        </td>
+                                                        <td><a href="/edit/<%=
+                                                                user._id %> "
+                                                                class="btn
+                                                                btn-primary">Edit</a></td>
+                                                        <td><a href="/delete/<%=
+                                                                user._id %> "
+                                                                class="btn
+                                                                btn-danger">Delete</a></td>
+                                                    </tr>
+                                                    <% }) %>
+                                                        <tbody>
+                                                            <tr>
+
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <% }else{ %>
+                                                    <h2 class="text-center">Data
+                                                        Not Found</h2>
+                                                    <% } %>
+
+                                                    </div>
